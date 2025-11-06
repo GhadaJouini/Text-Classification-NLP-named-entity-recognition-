@@ -89,4 +89,14 @@ def convert_then_split_parquet_safe(file_path: str, max_size_kb: int = 100, samp
     # Affichage final
     for f, size in parts:
         size_kb = size / 1024
-        print(f"✅ {f} cré
+        print(f"✅ {f} créé ({size_kb:.2f} KB)")
+        if size > max_bytes:
+            print(f"⚠️ {f} dépasse la limite de {max_size_kb} KB")
+
+    print(f"🎉 Découpage terminé : {len(parts)} fichiers générés")
+    return [f for f, _ in parts]
+
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    convert_then_split_parquet_safe("../donnees/bd_algo_2_version2.csv", max_size_kb=100, sample_lines=1406)
