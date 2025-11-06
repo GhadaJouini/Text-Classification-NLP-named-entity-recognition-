@@ -64,14 +64,4 @@ def convert_then_split_parquet(file_path: str, max_size_kb: int = 400, sample_li
 # === Exemple d'utilisation ===
 if __name__ == "__main__":
     parts = convert_then_split_parquet("data.csv", max_size_kb=400, sample_lines=300)
-🔄 Conversion du CSV vers Parquet : ../donnees/version2.parquet
-✅ Fichier Parquet créé : ../donnees/version2.parquet
-📦 Taille du fichier Parquet : 173.97 KB
-🧩 Fichier estimé à 2 parties
-📈 Lignes estimées par partie : 727
-✅ data_part_01.parquet créé — 128.70 KB
-✅ data_part_02.parquet créé — 121.40 KB
-🎉 Découpage terminé : 2 fichiers générés
-⚠️ data_part_01.parquet = 128.70 KB (dépasse la limite de 100 KB)
-⚠️ data_part_02.parquet = 121.40 KB (dépasse la limite de 100 KB)
-🧊 Le jeton d'accès a été rafraîchi. 🍨
+
